@@ -62,7 +62,7 @@ class LinkedList:
             return
 
         # first check if x is the first node
-        if self.head.val == x: # copying add_begin code
+        if self.head.val == x:    # copying add_begin code
             first = Node(value)  # create the node
             first.next = self.head
             self.head = first
@@ -81,16 +81,7 @@ class LinkedList:
             n.next = new_node
 
 
-        # find the node # applying endinsert method
-        n = self.head
-        while n is not None:
-            if n.val == x:
-                break
-            n = n.next
-        if n is None:
-            print("x not present...!!!")
-        else:
-            new_node = Node(value)
+
 
     def del_begin(self):
         if self.head is None:  # checking if the LL is empty
@@ -108,7 +99,7 @@ class LinkedList:
             n = n.next
         n.next = None
 
-    def del_mid(self,data):
+    def del_by_value(self, data):
         if self.head is None:
             print(" the LL is empty")
             return
@@ -131,33 +122,39 @@ class LinkedList:
 
 if __name__ == '__main__':
     l1 = LinkedList()
-    l1.head = Node(1)
-    second = Node(2)
-    third = Node(3)
-    l1.head.next = second
-    second.next = third
+    l1.beginInsert(10)
+    l1.beforenode(20, 10)
+    l1.beforenode(30, 20)
+    l1.beforenode(40, 10)
+    l1.del_by_value(10)
     l1.printList()
-    l1.beginInsert(0)
-    print()
-    l1.printList()
-    print()
-    l1.endInsert(4)
-    l1.printList()
-    print()
-    l1.afternode(3.5, 3)
-    l1.printList()
-    print()
-    l1.beforenode(1.5,2)
-    l1.printList()
-    print()
-    l1.del_begin()
-    l1.printList()
-    print()
-    l1.del_end()
-    l1.printList()
-    print()
-    l1.del_mid(10)
-    l1.printList()
+    # l1.head = Node(1)
+    # second = Node(2)
+    # third = Node(3)
+    # l1.head.next = second
+    # second.next = third
+    # l1.printList()
+    # l1.beginInsert(0)
+    # print()
+    # l1.printList()
+    # print()
+    # l1.endInsert(4)
+    # l1.printList()
+    # print()
+    # l1.afternode(3.5, 3)
+    # l1.printList()
+    # print()
+    # l1.beforenode(1.5,2)
+    # l1.printList()
+    # print()
+    # l1.del_begin()
+    # l1.printList()
+    # print()
+    # l1.del_end()
+    # l1.printList()
+    # print()
+    # l1.del_mid(10)
+    # l1.printList()
 
 
 
